@@ -20,10 +20,7 @@ label_encoder = joblib.load("label_encoder.pkl")
 
 import streamlit as st
 
-st.set_page_config(
-    page_title="Student Performance Predictor",
-    page_icon="logo.png"
-)
+
 
 st.title("🎓 Student Performance Predictor")
 
@@ -81,3 +78,4 @@ if st.sidebar.button("Predict Performance"):
     })
 
     st.bar_chart(prob_df.set_index("Performance Level"))
+
