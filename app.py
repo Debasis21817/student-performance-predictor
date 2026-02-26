@@ -36,9 +36,11 @@ activity_option = st.radio(
 )
 
 activities = 1 if activity_option == "Yes" else 0
-
-if st.sidebar.button("Predict Performance"):
-
+st.markdown("###")
+col1, col2, col3 = st.columns([1,2,1])
+with col2:
+    predict_button = st.button("🚀 Predict Performance", use_container_width=True)
+if predict_button:
     input_data = np.array([[study_hours, attendance, previous_marks, sleep_hours, activities]])
     input_scaled = scaler.transform(input_data)
 
@@ -78,4 +80,5 @@ if st.sidebar.button("Predict Performance"):
     })
 
     st.bar_chart(prob_df.set_index("Performance Level"))
+
 
