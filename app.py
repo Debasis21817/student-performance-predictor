@@ -11,8 +11,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Student Performance Predictor",
-    page_icon="🎓",
-    layout="centered"
+    page_icon="logo.png"
 )
 
 st.title("🎓 Student Performance Predictor")
@@ -42,3 +41,4 @@ if st.button("Predict Performance"):
 
 
     st.success(f"Predicted Performance: {result[0]}")
+
