@@ -41,4 +41,3 @@ if st.button("Predict Performance"):
 
 
     st.success(f"Predicted Performance: {result[0]}")
-
