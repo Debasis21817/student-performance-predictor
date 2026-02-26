@@ -7,6 +7,14 @@ model = joblib.load("model.pkl")
 scaler = joblib.load("scaler.pkl")
 label_encoder = joblib.load("label_encoder.pkl")
 
+import streamlit as st
+
+st.set_page_config(
+    page_title="Student Performance Predictor",
+    page_icon="🎓",
+    layout="centered"
+)
+
 st.title("🎓 Student Performance Predictor")
 
 st.write("Enter student details below:")
@@ -31,5 +39,6 @@ if st.button("Predict Performance"):
     prediction = model.predict(input_scaled)
 
     result = label_encoder.inverse_transform(prediction)
+
 
     st.success(f"Predicted Performance: {result[0]}")
